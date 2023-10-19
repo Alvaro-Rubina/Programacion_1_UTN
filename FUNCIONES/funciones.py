@@ -1,5 +1,4 @@
 # Sumar digitos de un numero
-
 def add_digits(numb):
     total = 0
     actual_numb = 0
@@ -10,3 +9,8 @@ def add_digits(numb):
         total += actual_numb
 
     print(f"Suma total de sus digitos: {total}")
+
+# Ahorcado
+def hangman():
+    for i in range(6):
+        print(i)
