@@ -85,14 +85,15 @@ def bingo_game(b_card):
         ball = random.randint(1, 75)
         print(f"\n* BOLILLA: {ball}")
 
+        # Recorro el cartón buscando algun numero que coincida con la bolilla
         for card in b_card:
             for i in range(len(card)):
                 if card[i] == ball:
                     print("¡Numero encontrado!")
                     card[i] = "X"
-                    break
+                    print("* Sus numeros hasta el momento:")
+                    showing_card(b_card)
+        # Verifico si se ha logrado Bingo
+        input("Pulse una tecla para sacar otra bolilla")
 
-        # Condiciones para ganar
-
-# def horizontal(b_card):
-
+# Condiciones para ganar
