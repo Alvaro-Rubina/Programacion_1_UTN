@@ -1,5 +1,4 @@
 import funciones
-import random
 
 print("--------- BINGO ---------")
 print("\nBienvendido, antes de jugar, necesita generar su propio cartón")
