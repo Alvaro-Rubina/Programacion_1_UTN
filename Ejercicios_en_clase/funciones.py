@@ -93,7 +93,67 @@ def bingo_game(b_card):
                     card[i] = "X"
                     print("* Sus numeros hasta el momento:")
                     showing_card(b_card)
-        # Verifico si se ha logrado Bingo
+        # Verifico si se ha logrado BINGO
+        bingo_h = horizontal(b_card)
+        bingo_v = vertical(b_card)
+        bingo_d = diagonal(b_card)
+
+        if (bingo_h == True) or (bingo_v == True) or (bingo_d == True):
+            print("------- ¡BINGO! -------")
+            break
         input("Pulse una tecla para sacar otra bolilla")
 
 # Condiciones para ganar
+def horizontal(b_card):
+    win = False
+    for card in b_card:
+        bingo = True
+        for num in card:
+            if num != "X":
+                bingo = False
+                break
+
+        if bingo:
+            win = True
+            break
+
+    return win
+
+def vertical(b_card):
+    win = False
+    for num in range(5):
+        bingo = True
+        for card in b_card:
+            if card[num] != "X":
+                bingo = False
+                break
+
+        if bingo:
+            win = True
+            break
+
+    return win
+
+def diagonal(b_card):
+    win = False
+
+    # Diagonal izquierda a derecha
+    bingo = True
+    for i in range(5):
+        if b_card[i][i] != "X":
+            bingo = False
+            break
+    if bingo:
+        win = True
+
+    # Diagonal derecha a izquierda
+    if not win:
+        bingo = True
+        for i in range(5):
+            if b_card[i][4 - i] != "X":
+                bingo = False
+                break
+        if bingo:
+            win = True
+
+    return win
