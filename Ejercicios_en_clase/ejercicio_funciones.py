@@ -1,5 +1,7 @@
-import random
+import sys
+sys.path.append("D:/GIT/Proyectos/Programacion_1_UTN/FUNCIONES")
 import funciones
+import random
 
 # Ejercicio funciones -- AHORCADO 
 print("--- Bienvenido al juego del ahorcado ---")
