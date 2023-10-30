@@ -1,5 +1,7 @@
-
+import sys
+sys.path.append("D:/GIT/Proyectos/Programacion_1_UTN/FUNCIONES")
 import funciones
+
 """1. Escribe un programa que tome una lista de números como entrada y la ordene en orden ascendente utilizando el método de ordenamiento de burbuja."""
 
 """new_list = []
