@@ -56,12 +56,12 @@ def vertical_counting(dna):
     letter_counter = 0
 
     # Recorro las letras de cada secuencia
-    for letter in range(dna[len(0)]):
+    for letter in range(len(dna[0])):
         letter_counter = 1
         # Recorro las secuencias (filas) de la lista
         for row in range(1, len(dna)):
-            current_letter = row[dna]
-            previous_letter = row[dna - 1]
+            current_letter = dna[row][letter]
+            previous_letter = dna[row - 1][letter]
 
             # Reviso si hay una secuencia de 1 o mas letras iguales
             if current_letter == previous_letter:
