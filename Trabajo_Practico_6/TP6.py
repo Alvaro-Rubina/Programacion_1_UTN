@@ -35,12 +35,12 @@ for number in minor_list:
     print(number)"""
 
 """5. Generar e imprimir una nueva lista que contenga como elementos a tuplas, cada una compuesta por un número de la lista original y la cantidad de veces que aparece en ella.
- Por ejemplo, si la lista original es [5,16,2,5,57,5,2], la nueva lista contendrá: [(5,3),(16,1),(2,2),(57,1)]"""
+Por ejemplo, si la lista original es [5,16,2,5,57,5,2], la nueva lista contendrá: [(5,3),(16,1),(2,2),(57,1)]"""
 """list_for_tuple = []
 for number in new_list:
-   numero = new_list.count(number)
-   new_tuple = (number,numero)
-   list_for_tuple.append(new_tuple)
+    numero = new_list.count(number)
+    new_tuple = (number,numero)
+    list_for_tuple.append(new_tuple)
 
 unique_tuples = []
 for number in set(new_list):
@@ -87,7 +87,7 @@ print(names_unique_to_primary)
 consiste en un tablero de cartas boca abajo y el objetivo es encontrar todas las parejas de cartas iguales."""
 # Ejercicio 9
 
-
+"""
 # Parejas
 couples = [
         ["AA", "BB", "CC", "DD"],
@@ -159,4 +159,35 @@ while True:
                 print(element, end= "  ")
             print()
         break
-    
+"""
+
+"""10.	Teniendo una matriz cuadrada de cualquier dimensión, obtener lo siguiente:
+a.	la diagonal principal.
+b.	la diagonal inversa."""
+
+"""
+# Ejercicio 10
+
+# Matriz:
+default_array = [
+                ["A", "B", "C"],
+                ["D", "E", "F"],
+                ["G", "H", "I"]]
+
+print("** Matriz con la que se trabajará:")
+for row in default_array:
+    for element in row:
+        print(element, end= "   ")
+    print()
+
+# Obteniendo la diagonal principal
+print("\n** Elementos de la diagonal principal de la matriz:")
+for i in range(3):
+    print(default_array[i][i], end= "  ")
+
+# Obteniendo la diagonal inversa
+print("\n** Elementos de la diagonal inversa de la matriz:")
+for i in range(3):
+    print(default_array[i][2 - i], end= "  ")
+
+"""
