@@ -43,33 +43,35 @@ def horizontal_counting(dna):
             if current_letter == previous_letter:
                 letter_counter += 1
 
-                # Si se forma una secuencia de letras igual o mayor a 4, sumo 1 al contador de secuencias
-                if letter_counter >= 4:
-                    seqs_counter += 1
-                    break
+            # Si se forma una secuencia de letras igual o mayor a 4, sumo 1 al contador de secuencias
+            if letter_counter >= 4:
+                seqs_counter += 1
+                break
     
     return seqs_counter
 
-# Funcion que cuenta el numero de SECUENCIAS VERTICALES
+# Funcion que cuenta el numero de SECUENCIAS VERTICALES (importante revisar, reparar funcionamiento)
 def vertical_counting(dna):
     seqs_counter = 0
     letter_counter = 0
 
     # Recorro las letras de cada secuencia
-    for letter in range(len(dna[0])):
+    for column in range(len(dna[0])):
         letter_counter = 1
         # Recorro las secuencias (filas) de la lista
         for row in range(1, len(dna)):
-            current_letter = dna[row][letter]
-            previous_letter = dna[row - 1][letter]
+            current_letter = dna[row][column]
+            previous_letter = dna[row - 1][column]
 
             # Reviso si hay una secuencia de 1 o mas letras iguales
             if current_letter == previous_letter:
                 letter_counter += 1
+            else:
+                letter_counter = 1
 
-                # Si se forma una secuencia de letras igual o mayor a 4, sumo 1 al contador de secuencias
-                if letter_counter >= 4:
-                    seqs_counter += 1
-                    break
+            # Si se forma una secuencia de letras igual o mayor a 4, sumo 1 al contador de secuencias
+            if letter_counter >= 4:
+                seqs_counter += 1
+                break
     
     return seqs_counter
