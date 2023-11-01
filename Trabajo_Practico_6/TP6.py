@@ -191,3 +191,112 @@ for i in range(3):
     print(default_array[i][2 - i], end= "  ")
 
 """
+
+"""11. Escribir un programa que guarde en una variable el diccionario {'Euro':'€', 'Dollar':'$', 'Yen':'¥'},
+pregunte al usuario por una divisa y muestre su símbolo o un mensaje de aviso si la divisa no está en
+el diccionario."""
+#Ejercicio 11
+
+"""
+
+symbols= {'Euro':'€', 'Dollar':'$', 'Yen':'¥'}
+print("Divisas disponibles: Euro, Dollar, Yen")
+
+choice=input("Ingrese el nombre de una de las divisas disponibles y se le devolverá el simbolo correspondiente \n")
+print(" ")
+
+if choice.capitalize() in symbols:
+
+    print(symbols[choice.capitalize()])
+
+else:
+
+    print("La divisa ingresada no se encuentra en las mencionadas anteriormente")
+
+"""
+
+"""12. Escribir un programa que pregunte al usuario su nombre, edad, dirección y teléfono y lo guarde en
+un diccionario. Después debe mostrar por pantalla el mensaje '<nombre> tiene <edad> años, vive
+en <dirección> y su número de teléfono es <teléfono>'."""
+#Ejercicio 12
+
+"""
+exit=False
+
+user_data={}
+
+name=input("Ingrese su nombre completo \n")
+user_data["name"]=name
+
+while exit==False:
+
+    age=input("Ingrese su edad \n")
+
+    if int(age)>0:
+
+        exit=True
+        user_data["age"]=age
+
+    else:
+
+        print("valor incorrecto intente nuevamente")
+    
+
+home_address=input("Ingrese su direccion \n")
+user_data["home_address"]=home_address
+
+exit=False
+
+while exit==False:
+
+    phone_number=input("Ingrese su numero de telefono \n")
+
+    if int(phone_number)>0:
+
+        exit=True
+        user_data["phone_number"]=phone_number
+
+    else:
+
+        print("valor incorrecto intente nuevamente")
+    
+
+print(f"{user_data['name']} tiene {user_data['age']} años, vive en {user_data['home_address']} y su numero de telefono es {user_data['phone_number']}")
+
+"""
+
+"""13. Escribir un programa que guarde en un diccionario los precios de las frutas de la tabla, pregunte al
+usuario por una fruta, un número de kilos y muestre por pantalla el precio de ese número de kilos
+de fruta. Si la fruta no está en el diccionario debe mostrar un mensaje informando de ello."""
+#Ejercicio 13
+
+"""
+exit=False
+
+fruits = {
+    'manzana': 125,
+    'banana': 150,
+    'naranja': 200,
+    'uva': 225,
+    'pera': 300
+    }
+print(f"Frutas disponibles: manzana ${fruits['manzana']} el kg, banana ${fruits['banana']} el kg, naranja ${fruits['naranja']} el kg, uva ${fruits['uva']} el kg, pera ${fruits['pera']} el kg")
+print("Ingrese la fruta que desea y la cantidad de kilos que va a llevar")
+fruit=input("Fruta: \n")
+if fruit.lower() in fruits:
+
+    
+    while exit ==False:
+        kgs=input("Ingrese la cantidad de kilos que llevara\n")
+
+        if int(kgs)>0:
+            
+            print(f"El total de su compra es de {fruits[fruit.lower()]*int(kgs) } $ ")
+            exit=True
+
+        else:
+            print("valor incorrecto, intente nuevamente")
+else:
+
+    print("La fruta ingresada no se encuentra")
+"""
