@@ -454,3 +454,28 @@ def count_sort(array):
             array_ord.append(i)
 
     return array_ord
+
+# FUNCIONES DE TP8 ---------------------------------------------------------------------------------------------
+def cant_digit(num):
+
+    if num < 10:
+        return 1
+    else:
+        return 1 + cant_digit(num // 10)
+
+def potencia(number1, number2):
+
+    if number1 == number2:
+        return True
+    elif number1 < number2:
+        return False
+    else:
+        return potencia(number1/ number2, number2)
+
+def find(string1, string2, index=0):
+    if index >= len(string1) - len(string2) + 1:
+        return []
+    if string1[index:index + len(string2)] == string2:
+        return [index] + find(string1, string2, index + 1)
+    else:
+        return find(string1, string2, index + 1)
