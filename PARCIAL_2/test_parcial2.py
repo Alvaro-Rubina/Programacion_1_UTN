@@ -19,6 +19,7 @@ def test_horizontal_counting(dna, seqs_counter):
 """
 
 # Prueba contador de secuencias verticales ---------------------------------------------------------------------
+
 @pytest.mark.parametrize("dna, seqs_counter",[
     # En caso de que 2 secuencias de ADN contengan 4 o mas letras iguales
     (["ATGCTA", "ATCCTC", "ATAACC", "ATTGGG", "ATCACG", "ATGGTC"], 2),
@@ -31,3 +32,4 @@ def test_horizontal_counting(dna, seqs_counter):
     ])
 def test_vertical_counting(dna, seqs_counter):
     assert funciones.vertical_counting(dna) == seqs_counter
+
