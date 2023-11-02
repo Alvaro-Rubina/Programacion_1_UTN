@@ -1,5 +1,4 @@
 import funciones
-from termcolor import colored
 
 # Inicio
 print("<<< SISTEMA DE RECLUTAMIENTO DE MUTANTES >>>")
@@ -53,9 +52,7 @@ for row in dna:
 print("\n----------- RESULTADO DEL ANALISIS -----------")
 mutant = funciones.is_mutant(dna)
 
-# Caso mutante
 if mutant:
     print("MUTANTE!: Su ADN contiene mas de 1 secuencia de cuatro letras iguales. Bienvenido a la Hermandad")
-# Caso no mutante (humano)
 else:
     print("HUMANO: Su ADN no contiene secuencias suficientes que verifiquen que usted sea mutante.")
