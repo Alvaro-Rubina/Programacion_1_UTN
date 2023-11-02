@@ -55,10 +55,10 @@ def vertical_counting(dna):
     seqs_counter = 0
     letter_counter = 0
 
-    # Recorro las letras de cada secuencia
-    for column in range(len(dna[0])):
+    # Recorro cada columna
+    for column in range(6):
         letter_counter = 1
-        # Recorro las secuencias (filas) de la lista
+        # Recorro las secuencias (filas) del ADN, empezando por el indice 1 para compararlo con su anterior (0)
         for row in range(1, len(dna)):
             current_letter = dna[row][column]
             previous_letter = dna[row - 1][column]
