@@ -49,53 +49,68 @@ def horizontal_counting(dna):
 # SECUENCIAS VERTICALES 
 def vertical_counting(dna):
     seqs_counter = 0
-    letter_counter = 0
+    letter_counter = 1
 
     # Recorro cada columna
     for column in range(6):
         letter_counter = 1
-        # Recorro las filas
-        for row in range(1, len(dna)):
+        for row in range(1, 6):
             current_letter = dna[row][column]
             previous_letter = dna[row - 1][column]
 
-            # Reviso si hay una secuencia de 1 o mas letras iguales
             if current_letter == previous_letter:
                 letter_counter += 1
             else:
-                letter_counter = 1
+                break
 
-            # Si se forma una secuencia de letras igual o mayor a 4, sumo 1 al contador de secuencias
             if letter_counter == 4:
                 seqs_counter += 1
                 break
     
     return seqs_counter
 
-
-
-# SECUENCIAS DIAGONALES
+# SECUENCIAS DIAGONALES -----------------------------------------------------------------
 def diagonal_counting(dna):
     seqs_counter = 0
     letter_counter = 0
 
-    # Diagonales Izquierda a derecha (SEGUIR REVISANDO, NO RETORNA BIEN ULTIMO CASO DE TESTEO)
-    for i in range(len(dna)):
-        for j in range(len(dna[i])):
-            letter_counter = 1
-            current_letter = dna[i][j]
+    # SECUENCIAS DESDE IZQUIERDA A DERECHA
+    for row in range(3):
+        for column in range(3):
+            # Defino las letras actuales y siguientes, para luego compararlas
+            current_letter = dna[row][column]
+            next_letter = dna[row + 1][column + 1]
 
-            while i < len(dna) - 1 and j < len(dna[i]) - 1:
-                next_letter = dna[i + 1][j + 1]
-
-                if current_letter == next_letter:
-                    letter_counter += 1
-
-                    if letter_counter == 4:
-                        seqs_counter += 1
+            if current_letter == next_letter:
+                # Si las 2 letras son iguales sumo 2 (ya que tengo ya 2 elementos iguales). Sigo comparando
+                letter_counter = 2
+                # Verifico de no sobrepasar los indices del array
+                while (row + letter_counter < 6) and (column + letter_counter < 6):
+                    if dna[row + letter_counter][column + letter_counter] == current_letter:
+                        letter_counter += 1
+                    else:
                         break
 
-                i += 1
-                j += 1
+                if letter_counter == 4:
+                    seqs_counter += 1
+
+
+    # SECUENCIAS DESDE DERECHA A IZQUIERDA
+    for row in range(3, 6):
+        for column in range(3):
+            current_letter = dna[row][column]
+            next_letter = dna[row - 1][column + 1]
+
+            if current_letter == next_letter:
+                letter_counter = 2
+                while (row - letter_counter >= 0) and (column + letter_counter < 6):
+                    if dna[row - letter_counter][column + letter_counter] == current_letter:
+                        letter_counter += 1
+                    else:
+                        break
+
+                if letter_counter == 4:
+                    seqs_counter += 1
+
 
     return seqs_counter
