@@ -36,14 +36,30 @@ def test_vertical_counting(dna, seqs_counter):
 
 """
 
-# Prueba contador de secuencias diagonales -----------------------------------------------------------------------
-
+# Prueba contador de secuencias diagonales Izquierda a derecha ----------------------------------------------------
 @pytest.mark.parametrize("dna, seqs_counter",[
-    (["ATGCGA", "CAGTTC", "TTATAT", "AGAAGG", "CCCCAA", "TCACTG"], 1),
-    (["ATCGAT", "ATCGAT", "ATCGAT", "ATCGAT", "ATCGAT", "ATCGAT"], 0),
-    (["ACGATT", "TACCGA", "CTATGC", "TCTAGG", "CGCTAT", "CACAGC"], 2),
-    (["ACATGA", "TACACT", "GTACAG", "AGTACA", "TTGTGT", "CCAGTA"], 5)
+    # 0 secs
+    (["ATGACC", "GGTAAA", "CTGACT", "TTACTT", "CACTTG", "AATCAG"], 0),
+    # Diagonal principal
+    (["GTACGT", "TCGTAG", "TGAGGC", "CAGATT", "CAGTAG", "TTTACA"], 1),
+    # 1 sec Arriba de la diagonal
+    (["GGACGT", "TCGTAG", "TGAGGC", "CAGAGT", "CAGTGC", "TTTACA"], 1),
+    (["GGTCGT", "TCATAG", "TGAGTC", "CAGAGT", "CAGTGC", "TTTACA"], 1),
+    # 1 sec Abajo de la diagonal
+    (["TACGTT", "TGTTAC", "CAGTTC", "GGACGT", "CACATC", "TTACAG"], 1),
+    (["TACGTT", "AGTTAC", "CAGTTC", "GCTCGT", "CACCTC", "TTACTG"], 1),
+    # 3 secs (1 de la diagonal principal y 2 abajo)
+    (["ATCGTT", "AAGACC", "AAACTG", "TAAATC", "GAAATT", "ATCAGC"], 3),
+    # 5 secs 
+    (["AAAGTT", "AAAACC", "AAAAAG", "TAAAAA", "GAAATT", "ATCAGC"], 5),
     ])
 def test_diagonal_counting(dna, seqs_counter):
     assert funciones.diagonal_counting(dna) == seqs_counter
 
+
+# Prueba contador de secuencias diagonales Izquierda a derecha ----------------------------------------------------
+@pytest.mark.parametrize("dna, seqs_counter",[
+    
+    ])
+def test_diagonal_counting(dna, seqs_counter):
+    assert funciones.diagonal_counting(dna) == seqs_counter
