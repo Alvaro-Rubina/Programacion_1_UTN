@@ -53,6 +53,31 @@ print("\n----------- RESULTADO DEL ANALISIS -----------")
 mutant = funciones.is_mutant(dna)
 
 if mutant:
-    print("MUTANTE!: Su ADN contiene mas de 1 secuencia de cuatro letras iguales. Bienvenido a la Hermandad")
+    print("¡MUTANTE!: Su ADN contiene mas de 1 secuencia de cuatro letras iguales. Bienvenido a la Hermandad")
 else:
     print("HUMANO: Su ADN no contiene secuencias suficientes que verifiquen que usted sea mutante.")
+
+# ------------------- LISTAS DE EJEMPLO PARA PROBAR EL FUNCIONAMIENTO -------------------
+"""
+Ejemplo humano:
+    * Acá hay una secuencia de 4 letras, pero como se necesitan mas de una, da como resultado HUMANO *
+    
+    T T G C A A
+    C G A T C A
+    A A G T G C
+    C A G C T A
+    G A G A C G
+    T A C T T G
+
+Ejemplo mutante
+    * Acá hay 3 secuencias: 1 horizontal, una vertical, y una diagonal inversa (desde derecha a izquierda) *
+    
+    T T T T A C
+    C A C C G T
+    G A G G T A
+    A A T T C C
+    T A T G T T
+    C G G T A T
+
+
+"""
