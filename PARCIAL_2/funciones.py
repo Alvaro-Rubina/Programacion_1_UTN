@@ -18,11 +18,13 @@ def is_mutant(dna):
 
     # Verificacion si es mutante segun numero de secuencias
     if total > 1:
-        mutante = True
+        mutant = True
+
+    print(f"** Numero de secuencias encontradas: {total}\n")
 
     return mutant
 
-# SECUENCIAS HORIZONTALES
+# SECUENCIAS HORIZONTALES --------------------------------------------------------------------------
 def horizontal_counting(dna):
     seqs_counter = 0
     letter_counter = 0
@@ -46,18 +48,19 @@ def horizontal_counting(dna):
 
 
 
-# SECUENCIAS VERTICALES 
+# SECUENCIAS VERTICALES ------------------------------------------------------------
 def vertical_counting(dna):
     seqs_counter = 0
     letter_counter = 1
 
-    # Recorro cada columna
+    # Recorro por columna
     for column in range(6):
         letter_counter = 1
         for row in range(1, 6):
             current_letter = dna[row][column]
             previous_letter = dna[row - 1][column]
 
+            # Comparo si las letras actuales son iguales, en ese caso sumo 1 al contador de letras
             if current_letter == previous_letter:
                 letter_counter += 1
             else:
@@ -77,38 +80,42 @@ def diagonal_counting(dna):
     # SECUENCIAS DESDE IZQUIERDA A DERECHA
     for row in range(3):
         for column in range(3):
-            # Defino las letras actuales y siguientes, para luego compararlas
+            # Defino las letras qu voy a comparar
             current_letter = dna[row][column]
             next_letter = dna[row + 1][column + 1]
 
             if current_letter == next_letter:
                 # Si las 2 letras son iguales sumo 2 (ya que tengo ya 2 elementos iguales). Sigo comparando
                 letter_counter = 2
-                # Verifico de no sobrepasar los indices del array
+                # Verifico de no sobrepasar los indices del array por fila y columna, y comparo con la letra actual
                 while (row + letter_counter < 6) and (column + letter_counter < 6):
                     if dna[row + letter_counter][column + letter_counter] == current_letter:
                         letter_counter += 1
                     else:
                         break
 
+                # Sumo 1 al contador de secuencias si se da el caso
                 if letter_counter == 4:
                     seqs_counter += 1
-
 
     # SECUENCIAS DESDE DERECHA A IZQUIERDA
     for row in range(3, 6):
         for column in range(3):
+            # Defino las letras que voy a comparar
             current_letter = dna[row][column]
             next_letter = dna[row - 1][column + 1]
 
             if current_letter == next_letter:
+                # Si las 2 letras son iguales sumo 2 (ya tengo 2 elementos iguales). Sigo comparando
                 letter_counter = 2
+                # Verifico de no sobrepasar los indices de el array por fila y columna, y comparo con la letra actual
                 while (row - letter_counter >= 0) and (column + letter_counter < 6):
                     if dna[row - letter_counter][column + letter_counter] == current_letter:
                         letter_counter += 1
                     else:
                         break
 
+                # Sumo 1 al contador de secuencias si se da el caso
                 if letter_counter == 4:
                     seqs_counter += 1
 
