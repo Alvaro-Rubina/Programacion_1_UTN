@@ -2,25 +2,25 @@ import pytest
 import funciones
 
 # Prueba contador de secuencias horizontales ---------------------------------------------------------------------
-"""
+
 @pytest.mark.parametrize("dna, seqs_counter",[
     # En caso de que 2 secuencias de ADN contengan 4 o mas letras iguales
     (["AAAAAA", "CTGATG", "TTTTTT", "CACAGT", "TTCACC", "ATTGAT"], 2),
     # En caso de que el ADN no contenga secuencias de letras iguales
     (["ATCGTA", "TTAGCT", "CCCTAG", "GGATTA", "CCATGT", "CCTATT"], 0),
     # En caso de que todas las secuencias del ADN contengan 4 o mas letras iguales
-    (["AAAAAA", "TTTTAG", "CCCCCC", "GGGGCA", "AAAAAA", "CCCCTG"], 6),
+    (["AAAAAA", "TTTTAG", "CCCCCC", "GGGGCA", "AAAAAA", "ACCCCG"], 6),
     # En caso de que 1 secuencia de ADN contengan 4 o mas iguales
     (["AAAAAA", "CTGATG", "TTTCGA", "CACAGT", "TTCACC", "ATTGAT"], 1),
     ])
 def test_horizontal_counting(dna, seqs_counter):
     assert funciones.horizontal_counting(dna) == seqs_counter
 
-"""
+
 
 # Prueba contador de secuencias verticales -----------------------------------------------------------------------
 
-"""
+
 @pytest.mark.parametrize("dna, seqs_counter",[
     # 2 secuencias, 4 o mas letras iguales
     (["ATGCTA", "ATCCTC", "ATAACC", "ATTGGG", "ATCACG", "ATGGTC"], 2),
@@ -34,7 +34,7 @@ def test_horizontal_counting(dna, seqs_counter):
 def test_vertical_counting(dna, seqs_counter):
     assert funciones.vertical_counting(dna) == seqs_counter
 
-"""
+
 
 # Prueba contador de secuencias diagonales Izquierda a derecha ----------------------------------------------------
 @pytest.mark.parametrize("dna, seqs_counter",[
@@ -59,7 +59,10 @@ def test_diagonal_counting(dna, seqs_counter):
 
 # Prueba contador de secuencias diagonales Izquierda a derecha ----------------------------------------------------
 @pytest.mark.parametrize("dna, seqs_counter",[
-    
+    (["ATCGTT", "TCCGTA", "GGCTCA", "CATTAG", "ACAATC", "GGCGTC"], 1),
+    (["ATCGTT", "TCGGTA", "GGCTCA", "GATTAG", "ACAATC", "GGAGTC"], 3),
+    (["ATCGTT", "TCGATA", "GGATCA", "GATCAG", "ACCATC", "GCAGTC"], 5),
+    (["ACTAAG", "GCTTCC", "TTAGTA", "CGAATG", "GATTAC", "CAACTG"], 0),
     ])
 def test_diagonal_counting(dna, seqs_counter):
     assert funciones.diagonal_counting(dna) == seqs_counter
