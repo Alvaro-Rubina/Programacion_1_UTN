@@ -4,16 +4,17 @@ import funciones
 
 """1. Escribe un programa que tome una lista de números como entrada y la ordene en orden ascendente utilizando el método de ordenamiento de burbuja."""
 
-"""new_list = []
+new_list = []
 while(True):
-    num = int(input("Ingresa una lista de numeros, cuand quieras salir ingresa 0: "))
+    num = int(input("Ingresa una lista de numeros, cuando quieras salir ingresa 0: "))
     if num == 0:
         break
     else:
         new_list.append(num)
 print("Lista: " + str(new_list))
 funciones.bubble_sort(new_list)
-print("Lista ordenada:" + str(new_list))"""
+print("Lista ordenada:" + str(new_list))
+
 """2. Crea un programa que tome una lista de palabras como entrada y las ordene alfabéticamente en orden ascendente utilizando el método de ordenamiento de selección."""
 """new_word_list = []
 while(True):
