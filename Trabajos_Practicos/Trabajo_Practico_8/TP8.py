@@ -5,13 +5,13 @@ import funciones
 """1.	Escribir una función que reciba un número positivo n y devuelva la cantidad de dígitos que tiene."""
 # Ejercicio 1
 
-"""
+
 number = int(input("* Ingrese un numero: "))
 
 digitos = funciones.cant_digit(number)
 
 print("** La cantidad de digitos del numero ingresado es de: ", digitos)
-"""
+
 
 """2.	Escribir una función que reciba 2 enteros n y b y devuelva True si n es potencia de b."""
 # Ejercicio 2
